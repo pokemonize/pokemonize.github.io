@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations default="en">
+    <translation id="greet">
+        <en>Hello, Trainer! :)</en>
+        <pt>Olá, treinador! :)</pt>
+    </translation>
+    <translation id="desc">
+        <en>Fill the fields and click in 'Capture' to save the data!</en>
+        <pt>Preencha os campos e clique em "CAPTURAR" para salvar os dados!</pt>
+    </translation>
+    <translation id="selectpoke">
+        <en>Select the Pokemon</en>
+        <pt>Selecione o Pokémon</pt>
+    </translation>
+</translations>

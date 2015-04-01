@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Pokémonize</title>
+	<link rel="canonical" href="https://robwu.nl/cors-anywhere.html">
+	<link rel="shortcut icon" type="image/png" href="images/ballicon.png" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+	<script defer src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script defer type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+	<script defer type="text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body>
+
+	<!--NAVBAR-->
+	<nav id="nav" class="navbar navbar-default navbar-static-top navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a id="btnSobre" class="btn pull-right form-control" data-toggle="modal" data-target="#ModalTeste">
+					<span class="glyphicon glyphicon-comment"></span>
+					<p>Sobre Pokémonize</p>
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<!--JUMBOTRON-->
+	<div class="container">
+		<div class="jumbotron">
+			<div id="pokeRow" class="row">
+
+				<div class="col-xs-9">
+					<h1 id="greet">
+						Olá, treinador! :)
+					</h1>
+				</div>
+				<div class="col-xs-3">
+					<table class="pull-right img-container">
+						<tr>
+							<td class="pkTd">
+								<img id="pkSprite" src="images/transparent.png" alt="" />
+								<img id="loading" class="pkLoad" src="images/loading.gif" alt="" />
+							</td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+
+			<p id="desc">Preencha os campos e clique em "CAPTURAR" para salvar os dados!</p>
+
+			<form action="#">
+
+				<!--NOME DO POKÉMON | LEVEL | NICKNAME -->
+				<div class="row">
+
+					<div class="col-xs-4">
+						<select id="pkName" name="pkName" class="combobox btn form-control" required>
+							<option id="selectpoke" value="" disabled selected>Selecione o Pokémon</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<input id="pkLevel" name="pkLevel" type="number" class="form-control" placeholder="LVL" required>
+					</div>
+					<div class="col-xs-2">
+						<button type="button" class="btn-group btn-info form-control nickname">Adicionar apelido</button>
+					</div>
+					<div class="col-xs-4">
+						<input id="pkNickname" type="text" class="input-group form-control" placeholder="Coloque aqui o apelido do Pokémon escolhido">
+					</div>
+
+				</div>
+				<br />
+
+				<!-- NATURE | GÊNERO | HABILIDADE | ITEM | POKÉBALL | SHINY -->
+				<div class="row">
+
+					<div class="col-xs-2">
+						<select id="pkNature" name="pkNature" class="combobox btn form-control" required>
+							<option value="" disabled selected>Nature</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<select id="pkGender" name="pkGender" class="combobox btn form-control" required>
+							<option value="" disabled selected>Gênero</option>
+							<option value="♂">Macho ♂ </option>
+							<option value="♀">Fêmea ♀ </option>
+
+
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<select id="pkAbility" name="pkAbility" class="combobox btn form-control" required>
+							<option value="" disabled selected>Habilidade</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<select id="pkItemORAS" name="pkItemORAS" class="combobox btn form-control" required>
+							<option value="" disabled selected>Item</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<select id="pkBall" name="pkBall" class="combobox btn form-control">
+							<option value="" disabled selected>Pokéball</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<select id="pkShiny" name="pkShiny" class="combobox btn form-control" required>
+							<option value="" disabled selected>Shiny?</option>
+							<option value="normal">Normal</option>
+							<option value="shiny">Shiny ★</option>
+						</select>
+					</div>
+
+				</div>
+				<br />
+
+				<!--GOLPES | IVS | EVS -->
+				<div class="row">
+
+					<div class="col-xs-4">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">Escolha os golpes do Pokémon</h3>
+							</div>
+
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-6">
+										<select id="pkMove1" name="pkMove1" class="combobox btn form-control" required>
+											<option value="" disabled selected>Golpe 1</option>
+										</select>
+									</div>
+									<div class="col-xs-6">
+										<select id="pkMove2" name="pkMove2" class="combobox btn form-control" required>
+											<option value="" disabled selected>Golpe 2</option>
+										</select>
+									</div>
+								</div>
+
+								<br />
+
+								<div class="row">
+									<div class="col-xs-6">
+										<select id="pkMove3" name="pkMove3" class="combobox btn form-control" required>
+											<option value="" disabled selected>Golpe 3</option>
+										</select>
+									</div>
+									<div class="col-xs-6">
+										<select id="pkMove4" name="pkMove4" class="combobox btn form-control" required>
+											<option value="" disabled selected>Golpe 4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-xs-4">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+								IVs (Individual Values)
+								<a id="max" class="badge pull-right">ALL MAX</a>
+							</h3>
+							</div>
+
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-4">
+										<select id="pkIVHP" name="pkIVHP" class="combobox btn form-control">
+											<option value="" disabled selected>HP</option>
+											<option value="31">31</option>
+											<option value="30">30</option>
+											<option value="0">0</option>
+										</select>
+									</div>
+									<div class="col-xs-4">
+										<select id="pkIVATK" name="pkIVATK" class="combobox btn form-control">
+											<option value="" disabled selected>ATK</option>
+											<option value="31">31</option>
+											<option value="30">30</option>
+											<option value="0">0</option>
+										</select>
+									</div>
+
+									<div class="col-xs-4">
+										<select id="pkIVDEF" name="pkIVDEF" class="combobox btn form-control">
+											<option value="" disabled selected>DEF</option>
+											<option value="31">31</option>
+											<option value="30">30</option>
+											<option value="0">0</option>
+										</select>
+									</div>
+								</div>
+
+								<br />
+
+								<div class="row">
+									<div class="col-xs-4">
+										<select id="pkIVSPA" name="pkIVSPA" class="combobox btn form-control">
+											<option value="" disabled selected>SPA</option>
+											<option value="31">31</option>
+											<option value="30">30</option>
+											<option value="0">0</option>
+										</select>
+									</div>
+									<div class="col-xs-4">
+										<select id="pkIVSPD" name="pkIVSPD" class="combobox btn form-control">
+											<option value="" disabled selected>SPD</option>
+											<option value="31">31</option>
+											<option value="30">30</option>
+											<option value="0">0</option>
+										</select>
+									</div>
+									<div class="col-xs-4">
+										<select id="pkIVSPE" name="pkIVSPE" class="combobox btn form-control">
+											<option value="" disabled selected>SPE</option>
+											<option value="31">31</option>
+											<option value="30">30</option>
+											<option value="0">0</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-xs-4">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+								EVs (Effort Values) 
+								<a id="reset" class="badge pull-right">RESET</a>
+							</h3>
+							</div>
+
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-4">
+										<div class="input-group">
+											<input id="pkEVHP" name="pkEVHP" type="number" class="form-control" placeholder="HP" />
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="input-group">
+											<input id="pkEVATK" name="pkEVATK" type="number" class="form-control" placeholder="ATK" />
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="input-group">
+											<input id="pkEVDEF" name="pkEVDEF" type="number" class="form-control" placeholder="DEF" />
+										</div>
+									</div>
+								</div>
+
+								<br />
+
+								<div class="row">
+									<div class="col-xs-4">
+										<div class="input-group">
+											<input id="pkEVSPA" name="pkEVSPA" type="number" class="form-control" placeholder="SPA" />
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="input-group">
+											<input id="pkEVSPD" name="pkEVSPD" type="number" class="form-control" placeholder="SPD" />
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="input-group">
+											<input id="pkEVSPE" name="pkEVSPE" type="number" class="form-control" placeholder="SPE" />
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<br />
+
+				<!--POKE SPRITES | BOTÃO FINALIZAR | BOTÃO CAPTURAR -->
+				<div class="row">
+					<div class="col-xs-9">
+						<button type="button" class="btn btn-block left" disabled>
+							<img src="images/ballicon.png" alt="" /> |
+						</button>
+					</div>
+					<div class="col-xs-3">
+						<input id="capturar" type="submit" class="btn btn-group btn-success pull-right" value="CAPTURAR" disabled>
+						<input id="finalizar" type="button" class="btn btn-group btn-warning pull-right" value="FINALIZAR" disabled>
+						<!--<button id="donwload" type="button">DONWLOAD SPRITES</button>-->
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+	<div class="modal fade" id="ModalTeste" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Devs ♥ Pokémon</h4>
+				</div>
+
+				<div class="modal-body">
+					<p>Serviço auxiliar para trocas de Pokémon.</p>
+
+					Feito com ♥ por:
+					<p><strong><a href="http://twitter.com/dotpegaso" target="_blank">dotpegaso</a></strong>
+					</p>
+
+					Colaborado com ♥ por:
+					<p><strong><a href="https://github.com/fuyangli" target="_blank">fuyangli</a></strong> +
+						<strong><a href="https://fb.com/phcs93" target="_blank">phcs93</a></strong> +
+						<strong><a href="https://fb.com/tni04" target="_blank">tni04</a></strong> 
+					</p>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal">Entendi ♥</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
