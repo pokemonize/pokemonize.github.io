@@ -104,15 +104,14 @@ $(document).ready(function() {
     
     function makeDefaultIVEV(){
         
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i <= 5; i++) {
             var EVs = ['#pkEVHP', '#pkEVATK', '#pkEVDEF', '#pkEVSPA', '#pkEVSPD', '#pkEVSPE'];
+            var IVs = ['#pkIVHP', '#pkIVATK', '#pkIVDEF', '#pkIVSPA', '#pkIVSPD', '#pkIVSPE'];
+
             if (!$(EVs[i]).val()) {
                 $(EVs[i]).val('0');
             }
-        }
-        
-        for (var i = 0; i < 6; i++) {
-            var IVs = ['#pkIVHP', '#pkIVATK', '#pkIVDEF', '#pkIVSPA', '#pkIVSPD', '#pkIVSPE'];
+
             if (!$(IVs[i]).val()) {
                 $(IVs[i]).val('31');
             }
@@ -464,211 +463,49 @@ $(document).ready(function() {
         $('.nickname').removeAttr('disabled');
         $('#capturar').removeAttr('disabled');
         
-        // Switch para verificar Poké Genderless
-        switch (pokemon) {
-            case 'Electrode':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Magnemite':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Magneton':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Porygon':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Stary':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Starmie':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Voltorb':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Porygon2':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Baltoy':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Beldum':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Metang':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Metagross':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Claydol':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Lunatone':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Solrock':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Bronzong':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Bronzor':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Magnezone':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Porygon-Z':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Rotom':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Bronzor':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Carbink':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Cryogonal':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Gollet':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Golurk':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Klang':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Kling':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Klingklang':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
-                
-            case 'Shedinja':
-                $('#pkGender').html('');
-                $('#pkGender').append('<option value="none">Sem gênero</option>');
-                $('#pkGender').val('none');
-                $('#pkGender').attr('disabled','true');
-                break;
+        function pkGender(){
+            $('#pkGender').html('');
+            $('#pkGender').append('<option value="none">Sem gênero</option>');
+            $('#pkGender').val('none');
+            $('#pkGender').attr('disabled','true');
         }
+        var pokemons = [
+            'Electrode', 
+            'Magnemite', 
+            'Magneton', 
+            'Porygon', 
+            'Stary', 
+            'Starmie', 
+            'Voltorb', 
+            'Porygon2', 
+            'Baltoy', 
+            'Beldum', 
+            'Metang',
+            'Metagross',
+            'Claydol',
+            'Lunatone',
+            'Solrock',
+            'Bronzong',
+            'Bronzor',
+            'Magnezone',
+            'Porygon-Z',
+            'Rotom',
+            'Bronzor',
+            'Carbink',
+            'Cryogonal',
+            'Gollet',
+            'Golurk',
+            'Klang',
+            'Kling',
+            'Klingklang',
+            'Shedinja'
+        ];
+
+        pokemons.forEach(function(item){
+            if(pokemon == item){
+                pkGender();
+            }
+        });
 
         // AJAX para carregar as habilites do Pokémon
         var url = "http://pokeapi.co/api/v1/pokemon/" + pokemon.toLowerCase(); //Acessa a URL passando o nome do pokémon em lowercase
@@ -706,10 +543,7 @@ $(document).ready(function() {
                     // Tratamento de gênero e ataques para o Ditto
                     if (pokemon == 'Ditto') {
                         
-                        $('#pkGender').html('');
-                        $('#pkGender').append('<option value="none">Sem gênero</option>');
-                        $('#pkGender').val('none');
-                        $('#pkGender').attr('disabled','true');
+                        pkGender();
                         
                         $('#pkMove1').html('');
                         $('#pkMove1').append('<option value="Transform">Transform</option>');
