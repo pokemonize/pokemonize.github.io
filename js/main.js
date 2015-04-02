@@ -470,35 +470,10 @@ $(document).ready(function() {
             $('#pkGender').attr('disabled','true');
         }
         var pokemons = [
-            'Electrode', 
-            'Magnemite', 
-            'Magneton', 
-            'Porygon', 
-            'Stary', 
-            'Starmie', 
-            'Voltorb', 
-            'Porygon2', 
-            'Baltoy', 
-            'Beldum', 
-            'Metang',
-            'Metagross',
-            'Claydol',
-            'Lunatone',
-            'Solrock',
-            'Bronzong',
-            'Bronzor',
-            'Magnezone',
-            'Porygon-Z',
-            'Rotom',
-            'Bronzor',
-            'Carbink',
-            'Cryogonal',
-            'Gollet',
-            'Golurk',
-            'Klang',
-            'Kling',
-            'Klingklang',
-            'Shedinja'
+            'Electrode','Magnemite','Magneton','Porygon','Stary','Starmie','Voltorb','Porygon2','Baltoy', 
+            'Beldum','Metang','Metagross','Claydol','Lunatone','Solrock','Bronzong','Bronzor','Magnezone',
+            'Porygon-Z','Rotom','Bronzor','Carbink','Cryogonal','Gollet','Golurk','Klang','Kling',
+            'Klingklang','Shedinja'
         ];
 
         pokemons.forEach(function(item){
