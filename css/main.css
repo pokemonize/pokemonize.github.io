@@ -59,3 +59,42 @@ body{
 #nav{
     height: 53px;
 }
+
+@media screen and (min-width:1px) and (max-width:766px){
+    .container{
+        width:100%;
+        padding: 0;
+    }
+    .col-xs-9{
+        width:100%;
+    }
+    .col-xs-9 + .col-xs-3{
+        width:100%;
+    }
+    .col-xs-4{
+        width:100%;
+        margin:5px 0;
+    }
+    .col-xs-2{
+        width:50%;
+        margin:5px 0;
+    }
+    .col-xs-3{
+        padding: 0 8px 0 0;
+    }
+    .col-xs-3 input{
+        width:45%;
+        margin: 5px 2.0% 5px 0;
+        float:left;
+    }
+
+    .jumbotron p{
+        padding: 0;
+        font-size: 16px;
+        text-align: left;
+        margin: 30px 0 40px 0;
+    }
+    .jumbotron {
+          height: auto;
+    }
+}
